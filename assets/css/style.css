@@ -64,9 +64,9 @@ a:hover { color: var(--white); }
   text-decoration: none;
 }
 
-.logo-hex {
-  width: 40px;
-  height: 40px;
+.logo-joy {
+  height: 44px;
+  width: auto;
   flex-shrink: 0;
 }
 
@@ -129,7 +129,7 @@ a:hover { color: var(--white); }
 .ticker-inner {
   display: inline-flex;
   gap: 4rem;
-  animation: ticker-scroll 30s linear infinite;
+  animation: ticker-scroll 90s linear infinite;
 }
 
 .ticker-item::before {
