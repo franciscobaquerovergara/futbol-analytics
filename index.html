@@ -1,0 +1,27 @@
+---
+layout: default
+title: "Fútbol Analytics"
+---
+
+<div class="page-container">
+  {% if site.posts.size > 0 %}
+    <div class="magazine-grid">
+      <section class="hero-section">
+        {% assign hero = site.posts.first %}
+        <div class="hero-label">{% if hero.categories %}{{ hero.categories | first }}{% else %}Destacado{% endif %}</div>
+        <a href="{{ hero.url | relative_url }}"><h1 class="hero-title">{{ hero.title }}</h1></a>
+        <p class="hero-excerpt">{% if hero.excerpt %}{{ hero.excerpt | strip_html | truncate: 200 }}{% else %}{{ hero.content | strip_html | truncate: 200 }}{% endif %}</p>
+        <div class="hero-byline"><strong>{{ site.author }}</strong> &nbsp;·&nbsp; {{ hero.date | date: "%d de %B de %Y" }}</div>
+        <div style="margin-top:3rem">
+          <div class="section-label">Últimos artículos</div>
+          {% for post in site.posts offset: 1 limit: 8 %}
+          <div class="article-card"><div><div class="article-card-meta">{% if post.categories %}{{ post.categories | first }} &nbsp;·&nbsp; {% endif %}{{ post.date | date: "%d %b %Y" }}</div><a href="{{ post.url | relative_url }}" class="article-card-title">{{ post.title }}</a></div></span></div>
+          {% endfor %}
+        </div>
+      </section>
+      <aside class="sidebar">
+        <div class="sidebar-widget"><div class="sidebar-widget-title">Ultimos artículos</div><ul class="ranked-list">{% for post in site.posts limit: 5 %}<li class="ranked-item"><span class="ranked-number">{{ forloop.index }}</span><div><a href="{{ post.url | relative_url }}" class="ranked-title">{{ post.title }}</a><div class="ranked-meta">{{ post.date | date: "%d %b %Y" }}</div></div></li>{% endfor %}</ul></div>
+      </aside>
+    </div>
+  {% endif %}
+</div>
