@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="post-layout">
+  <article>
+    <header class="post-header">
+      {% if page.categories %}<div class="post-category">{{ page.categories | first }}</div>{% endif %}
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta">{{ page.date | date: "%d de %B de %Y" }} &nbsp;·&nbsp; {{ site.author }}</div>
+    </header>
+    <div class="post-content">{{ content }}</div>
+    <nav style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-family:var(--font-sans);font-size:0.8rem">
+      {% if page.previous.url %}<a href="{{ page.previous.url | relative_url }}" style="color:var(--gold)">← {{ page.previous.title | truncate: 40 }}</a>{% else %}<span></span>{% endif %}
+      {% if page.next.url %}<a href="{{ page.next.url | relative_url }}" style="color:var(--gold)">{{ page.next.title | truncate: 40 }} →</a>{% endif %}
+    </nav>
+  </article>
+  <aside class="sidebar"><div class="sidebar-widget"><div class="sidebar-widget-title">Artículos recientes</div><ul class="ranked-list">{% for post in site.posts limit: 5 %}<li class="ranked-item"><span class="ranked-number">{{ forloop.index }}</span><div><a href="{{ post.url | relative_url }}" class="ranked-title">{{ post.title }}</a><div class="ranked-meta">{{ post.date | date: "%d %b %Y" }}</div></div></li>{% endfor %}</ul></div></aside>
+</div>
