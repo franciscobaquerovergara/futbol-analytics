@@ -1,0 +1,42 @@
+title: "Fútbol Analytics"
+description: "Análisis de fútbol con datos, tácticas y estadísticas."
+url: ""
+baseurl: ""
+author: "Francisco Baquero"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Theme — using custom layout (no gem theme)
+theme: null
+
+# Plugins (GitHub Pages safe)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Pagination
+paginate: 10
+paginate_path: "/page/:num/"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Exclude from build
+exclude:
+  - migrate_wp_to_jekyll.py
+  - README.md
+  - Gemfile
+  - Gemfile.lock
