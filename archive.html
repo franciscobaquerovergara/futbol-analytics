@@ -1,0 +1,15 @@
+---
+layout: default
+title: Archivo
+permalink: /archive/
+---
+
+<div class="page-container">
+  <h1 style="font-family:var(--font-serif);font-size:2rem;color:var(--gold);margin-bottom:2rem;border-bottom:2px solid var(--gold);padding-bottom:0.75rem">Archivo</h1>
+  {% for post in site.posts %}
+    <div style="display:flex;gap:1.5rem;padding:0.5rem 0;border-bottom:1px solid var(--border)">
+      <span style="color:var(--gray);font-family:var(--font-sans);font-size:0.7rem;white-space:nowrap">{{ post.date | date: "%d %b %Y" }}</span>
+      <a href="{{ post.url | relative_url }}" style="color:var(--white);font-family:var(--font-serif)">{{ post.title }}</a>
+    </div>
+  {% endfor %}
+</div>
