@@ -1,7 +1,7 @@
 title: "Fútbol Analytics"
 description: "Análisis de fútbol con datos, tácticas y estadísticas."
 url: ""
-baseurl: ""
+baseurl: "/futbol-analytics"
 author: "Francisco Baquero"
 
 # Build settings
@@ -15,6 +15,7 @@ theme: null
 # Plugins (GitHub Pages safe)
 plugins:
   - jekyll-feed
+  - jekyll-paginate
   - jekyll-seo-tag
 
 # Pagination
