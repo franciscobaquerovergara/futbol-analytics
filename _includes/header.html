@@ -1,0 +1,39 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a href="{{ '/' | relative_url }}" class="site-logo">
+      <svg class="logo-hex" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="40,6 64,6 76,26 76,54 64,74 40,74 28,54 28,26"
+          fill="#e8c44a" opacity="0.15" stroke="#e8c44a" stroke-width="1.5"/>
+        <rect x="34" y="42" width="6"  height="18" fill="#e8c44a"/>
+        <rect x="42" y="32" width="6"  height="28" fill="#e8c44a" opacity="0.85"/>
+        <rect x="50" y="24" width="6"  height="36" fill="#e8c44a"/>
+        <rect x="58" y="36" width="6"  height="24" fill="#e8c44a" opacity="0.7"/>
+        <rect x="66" y="28" width="6"  height="32" fill="#e8c44a" opacity="0.9"/>
+        <text x="82" y="36" font-family="Georgia,serif" font-size="14" font-weight="bold"
+          fill="#e8c44a" letter-spacing="1">FÚTBOL</text>
+        <text x="82" y="52" font-family="Helvetica Neue,Arial,sans-serif" font-size="8"
+          fill="#888888" letter-spacing="3">ANALYTICS</text>
+      </svg>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="{{ '/' | relative_url }}">Inicio</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}">Categorías</a></li>
+        <li><a href="{{ '/archive/' | relative_url }}">Archivo</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">Acerca de</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    {% assign recent = site.posts | limit: 5 %}
+    {% for post in recent %}
+      <span class="ticker-item">{{ post.title }}</span>
+    {% endfor %}
+    {% for post in recent %}
+      <span class="ticker-item">{{ post.title }}</span>
+    {% endfor %}
+  </div>
+</div>
