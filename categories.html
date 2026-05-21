@@ -1,0 +1,18 @@
+---
+layout: default
+title: Categorías
+permalink: /categories/
+---
+
+<div class="page-container">
+  <h1 style="color:var(--gold);font-size:2rem">Categorías</h1>
+  {% assign cats = site.categories | sort %}
+  {% for cat in cats %}
+    <section id="{{ cat[0] }}" style="margin-bottom:3rem">
+      <h2 style="color:var(--gold);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:0.5rem;margin-bottom:1rem">{{ cat[0] }}</h2>
+      {% for post in cat[1] %}
+        <div class="article-card"><div><div class="article-card-meta">{{ post.date | date: "%d %b %Y" }}</div><a href="{{ post.url | relative_url }}" class="article-card-title">{{ post.title }}</a></div></div>
+      {% endfor %}
+    </section>
+  {% endfor %}
+</div>
